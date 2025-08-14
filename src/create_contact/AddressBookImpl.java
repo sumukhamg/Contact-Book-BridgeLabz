@@ -29,4 +29,22 @@ public class AddressBookImpl implements AddressBook {
         return addressBookObj;
     }
 
+    public boolean isPresent(String firstName) {
+        if (contactList.isEmpty())
+            return false;
+        for (int i = 0; i < contactList.size(); i++) {
+            if (contactList.get(i).getFirstName() == firstName) {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    public void editName(int idx, String newName) {
+        contactList.get(idx).setFirstName(newName);
+        System.out.println("Edited contact: ");
+        System.out.println(contactList);
+    }
+
 }

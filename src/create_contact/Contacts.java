@@ -19,6 +19,10 @@ public class Contacts {
         this.email = contactBuilder.email;
     }
 
+    public Contacts() {
+
+    }
+
     static class ContactBuilder {
         private String firstName;
         private String lastName;
@@ -72,6 +76,42 @@ public class Contacts {
         }
 
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    // --------Setters-----------------
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public void setPhoneNo(long phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    // ------toString--------
 
     @Override
     public String toString() {
