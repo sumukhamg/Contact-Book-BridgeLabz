@@ -13,7 +13,7 @@ public class Main {
             System.out.println("Please Enter a choice: ");
             System.out.println("1. Add new Contact");
             System.out.println("2. Edit existing contact");
-            System.out.println("3. To exit switch");
+            System.out.println("3. To delete a person");
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -67,6 +67,25 @@ public class Main {
                             System.out.println("Invalid name");
                         }
                     }
+                    break;
+
+                case 3:
+                    System.out.println("Please enter the first name of the person");
+                    String deleteName = sc.nextLine();
+                    sc.nextLine();
+                    if (!addressBook.contactList.isEmpty()) {
+                        for (int i = 0; i < addressBook.contactList.size(); i++) {
+
+                            if (addressBook.isPresent(deleteName)) {
+                                addressBook.deleteContact(i, deleteName);
+                            } else {
+                                System.out.println("Invalid name");
+                            }
+                        }
+                    } else {
+                        System.out.println("Contact list is empty");
+                    }
+
                     break;
 
                 default:
