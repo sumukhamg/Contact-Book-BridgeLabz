@@ -120,7 +120,9 @@ public class Contacts {
 
         if (firstName != null)
             contactDetails.append("First Name: " + firstName + " \n");
+        // contactDetails.append("Last Name: " + lastName + " \n");
         if (lastName != null)
+            // contactDetails.append("First Name: " + firstName + " \n");
             contactDetails.append("Last Name: " + lastName + " \n");
         if (address != null)
             contactDetails.append("Addrsss: " + address + " \n");

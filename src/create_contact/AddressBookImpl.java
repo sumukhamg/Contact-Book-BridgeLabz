@@ -27,7 +27,7 @@ public class AddressBookImpl implements AddressBook {
                 System.out.println("City: " + details.getCity());
                 System.out.println("State: " + details.getState());
                 System.out.println("Phone number: " + details.getPhoneNo());
-                System.out.println("Email" + details.getEmail());
+                System.out.println("Email: " + details.getEmail());
             }
         }
 

@@ -40,7 +40,7 @@ public class Main {
             switch (choice) {
                 case 1:
                     System.out.println("Enter firstName: ");
-                    String firstName = sc.nextLine();
+                    String firstName = sc.next();
                     sc.nextLine();
 
                     System.out.println("Enter lastName: ");
@@ -48,16 +48,18 @@ public class Main {
 
                     System.out.println("Enter Phone Number: ");
                     long phone = sc.nextLong();
-                    sc.nextLine();
 
                     System.out.println("Enter Address: ");
-                    String address = sc.nextLine();
+                    String address = sc.next();
+                    sc.nextLine();
 
                     System.out.println("Enter City: ");
                     String city = sc.nextLine();
+                    // sc.nextLine();
 
                     System.out.println("Enter State: ");
                     String state = sc.nextLine();
+                    // sc.nextLine();
 
                     System.out.println("Enter email: ");
                     String email = sc.nextLine();
@@ -110,6 +112,7 @@ public class Main {
 
                 case 4:
                     addressBook.display();
+                    // System.out.println(contactBook);
                     break;
                 default:
                     System.out.println("Exiting switch");
