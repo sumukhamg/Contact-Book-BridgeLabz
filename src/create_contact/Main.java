@@ -3,17 +3,38 @@ package create_contact;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Contacts contactBook = new Contacts.ContactBuilder().build();
-        AddressBookImpl addressBook = AddressBookImpl.createObject();
+        AddressBookImpl addressBook = null;
+        AddressBookImpl addressFamily = new AddressBookImpl();
+        AddressBookImpl addressFriends = new AddressBookImpl();
+        AddressBookImpl addressWork = new AddressBookImpl();
 
         while (true) {
+            System.out.println("Which Address Book you want to update?");
+            System.out.println("1. Family");
+            System.out.println("2. Friends");
+            System.out.println("3. Work");
+
+            int addressBookChoice = sc.nextInt();
+            if (addressBookChoice == 1)
+                addressBook = addressFamily;
+            else if (addressBookChoice == 2)
+                addressBook = addressFriends;
+            else if (addressBookChoice == 3)
+                addressBook = addressWork;
+            else {
+                System.out.println("Invalid choice");
+                return;
+            }
+
             System.out.println("Please Enter a choice: ");
             System.out.println("1. Add new Contact");
             System.out.println("2. Edit existing contact");
             System.out.println("3. To delete a person");
+            System.out.println("4. To display a person contact details");
+            System.out.println("any other key to exit switch");
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -25,7 +46,7 @@ public class Main {
                     System.out.println("Enter lastName: ");
                     String lastNAme = sc.nextLine();
 
-                    System.out.println("Enter Phone Number ");
+                    System.out.println("Enter Phone Number: ");
                     long phone = sc.nextLong();
                     sc.nextLine();
 
@@ -85,27 +106,16 @@ public class Main {
                     } else {
                         System.out.println("Contact list is empty");
                     }
-
                     break;
 
+                case 4:
+                    addressBook.display();
+                    break;
                 default:
                     System.out.println("Exiting switch");
                     return;
-
             }
         }
-
-        // Contacts contactBook = new Contacts.ContactBuilder()
-        // .firstName(firstName)
-        // .lastName(lastNAme)
-        // .phoneNo(phone)
-        // .address(address)
-        // .city(city)
-        // .state(state)
-        // .email(email)
-        // .build();
-
-        // System.out.println(contactBook);
     }
 
 }
