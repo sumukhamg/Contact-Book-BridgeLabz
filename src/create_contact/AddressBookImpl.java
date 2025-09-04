@@ -5,9 +5,8 @@ import java.util.Iterator;
 
 public class AddressBookImpl implements AddressBook {
     ArrayList<Contacts> contactList = new ArrayList<>();
-    private static AddressBookImpl addressBookObj;
 
-    private AddressBookImpl() {
+    public AddressBookImpl() {
 
     }
 
@@ -20,14 +19,18 @@ public class AddressBookImpl implements AddressBook {
     public void display() {
         if (contactList.isEmpty())
             System.out.println("No contacts found");
-        else
-            System.out.println(contactList);
-    }
+        else {
+            for (Contacts details : contactList) {
+                System.out.println("First Name: " + details.getFirstName());
+                System.out.println("Last Name: " + details.getLastName());
+                System.out.println("Address: " + details.getAddress());
+                System.out.println("City: " + details.getCity());
+                System.out.println("State: " + details.getState());
+                System.out.println("Phone number: " + details.getPhoneNo());
+                System.out.println("Email: " + details.getEmail());
+            }
+        }
 
-    public static AddressBookImpl createObject() {
-        if (addressBookObj == null)
-            addressBookObj = new AddressBookImpl();
-        return addressBookObj;
     }
 
     public boolean isPresent(String firstName) {
